@@ -18,6 +18,7 @@ var existingAntennaLegASubmit = document.querySelector("#leg-a-submit");
 var existingAntennaLegBSubmit = document.querySelector("#leg-b-submit");
 var existingAntennaLegCSubmit = document.querySelector("#leg-c-submit");
 var existingAntennaLegDSubmit = document.querySelector("#leg-d-submit");
+var initButton = document.querySelector("#init");
 var listLegA = document.querySelector("#list-leg-a");
 var listLegB = document.querySelector("#list-leg-b");
 var listLegC = document.querySelector("#list-leg-c");
@@ -36,14 +37,14 @@ towerHeight = 50;
   existingAntennasLegB = [];
   existingAntennasLegC = [];
   existingAntennasLegD = [];
-
+  
+  existingAntennasLegA = [46, 45, 40, 39, 18];
+  existingAntennasLegB = [46, 40, 45, 19, 25];
+  existingAntennasLegC = [46, 20, 30, 40, 50];
+  existingAntennasLegD = [];
 
 */
 
-existingAntennasLegA = [46, 45, 40, 39, 18];
-existingAntennasLegB = [46, 40, 45, 19, 25];
-existingAntennasLegC = [46, 20, 30, 40, 50];
-existingAntennasLegD = [];
 
 
 // Tower Height
@@ -59,12 +60,12 @@ towerHeightSubmit.addEventListener("click", function(){
 
 // On existingAntennaLeg# submit parse the existingAntennaLeg# height to number and add it to listLeg#
 
-/*
 existingAntennaLegASubmit.addEventListener("click", function(){
   existingAntennasLegA.push(Number(existingAntennaLegA.value));
   const antennaHeight = document.createElement("li");
   antennaHeight.innerHTML = existingAntennaLegA.value;
   listLegA.appendChild(antennaHeight);
+  existingAntennaLegA.value = "";
 });
 
 existingAntennaLegBSubmit.addEventListener("click", function(){
@@ -72,6 +73,7 @@ existingAntennaLegBSubmit.addEventListener("click", function(){
   const antennaHeight = document.createElement("li");
   antennaHeight.innerHTML = existingAntennaLegB.value;
   listLegB.appendChild(antennaHeight);
+  existingAntennaLegB.value = "";
 });
 
 existingAntennaLegCSubmit.addEventListener("click", function(){
@@ -79,6 +81,7 @@ existingAntennaLegCSubmit.addEventListener("click", function(){
   const antennaHeight = document.createElement("li");
   antennaHeight.innerHTML = existingAntennaLegC.value;
   listLegC.appendChild(antennaHeight);
+  existingAntennaLegC.value = "";
 });
 
 existingAntennaLegDSubmit.addEventListener("click", function(){
@@ -86,31 +89,48 @@ existingAntennaLegDSubmit.addEventListener("click", function(){
   const antennaHeight = document.createElement("li");
   antennaHeight.innerHTML = existingAntennaLegD.value;
   listLegD.appendChild(antennaHeight);
+  existingAntennaLegD.value = "";
 });
 
-*/
+initButton.addEventListener("click", function(){
 
+  var availableLocationsForStandaloneLegA = availableLocationsInLeg(existingAntennasLegA);
+  var availableLocationsForStandaloneLegB = availableLocationsInLeg(existingAntennasLegB);
+  var availableLocationsForStandaloneLegC = availableLocationsInLeg(existingAntennasLegC);
+  var availableLocationsForStandaloneLegD = availableLocationsInLeg(existingAntennasLegD);
 
-var availableLocationsForStandaloneLegA = availableLocationsInLeg(existingAntennasLegA);
-var availableLocationsForStandaloneLegB = availableLocationsInLeg(existingAntennasLegB);
-var availableLocationsForStandaloneLegC = availableLocationsInLeg(existingAntennasLegC);
-var availableLocationsForStandaloneLegD = availableLocationsInLeg(existingAntennasLegD);
+  var blockedHeights = availableLocationsInTower(availableLocationsForStandaloneLegA, availableLocationsForStandaloneLegB, availableLocationsForStandaloneLegC, availableLocationsForStandaloneLegD);
+    
+  var finalAntennaLocationsLegA = availableAntennaLocationsForWholeTowerLegA(blockedHeights, availableLocationsForStandaloneLegA);
+  var finalAntennaLocationsLegB = availableAntennaLocationsForWholeTowerLegB(blockedHeights, availableLocationsForStandaloneLegB);
+  var finalAntennaLocationsLegC = availableAntennaLocationsForWholeTowerLegC(blockedHeights, availableLocationsForStandaloneLegC);
+  var finalAntennaLocationsLegD = availableAntennaLocationsForWholeTowerLegD(blockedHeights, availableLocationsForStandaloneLegD);
+  
+  finalAntennaLocationsLegA.forEach(function(antenna){
+    const listElement = document.createElement("li");
+    listElement.innerHTML = antenna.toString();
+    availableLocationsLegA.appendChild(listElement);
+  });
 
-//console.log(availableLocationsForStandaloneLegA)
-//console.log(availableLocationsForStandaloneLegB)
-//console.log(availableLocationsForStandaloneLegC)
-//console.log(availableLocationsForStandaloneLegD)
+  finalAntennaLocationsLegB.forEach(function(antenna){
+    const listElement = document.createElement("li");
+    listElement.innerHTML = antenna.toString();
+    availableLocationsLegB.appendChild(listElement);
+  });
 
-var blockedHeights = availableLocationsInTower(availableLocationsForStandaloneLegA, availableLocationsForStandaloneLegB, availableLocationsForStandaloneLegC, availableLocationsForStandaloneLegD);
+  finalAntennaLocationsLegC.forEach(function(antenna){
+    const listElement = document.createElement("li");
+    listElement.innerHTML = antenna.toString();
+    availableLocationsLegC.appendChild(listElement);
+  });
 
-//console.log(blockedHeights);
+  finalAntennaLocationsLegD.forEach(function(antenna){
+    const listElement = document.createElement("li");
+    listElement.innerHTML = antenna.toString();
+    availableLocationsLegD.appendChild(listElement);
+  });
 
-var finalAntennaLocationsLegA = availableAntennaLocationsForWholeTowerLegA(blockedHeights, availableLocationsForStandaloneLegA);
-var finalAntennaLocationsLegB = availableAntennaLocationsForWholeTowerLegB(blockedHeights, availableLocationsForStandaloneLegB);
-var finalAntennaLocationsLegC = availableAntennaLocationsForWholeTowerLegC(blockedHeights, availableLocationsForStandaloneLegC);
-var finalAntennaLocationsLegD = availableAntennaLocationsForWholeTowerLegD(blockedHeights, availableLocationsForStandaloneLegD);
-
-console.log(finalAntennaLocationsLegD);
+});
 
 
 // Available Antenna Locations in One Leg
