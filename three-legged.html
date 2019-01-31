@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <title>Antenna Locator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="input">
+        <h1>Enter Tower Height</h1>
+        <h3>Tower Height = <span id="tower-height-value"></span></h3>
+        <input type="text" placeholder="Tower Height" id="tower-height" class="form-control">
+        <input type="submit" id="tower-height-submit" class="btn btn-primary">
+
+
+        <h1 id="antenna-height-leg-a">Add Existing Antennas</h1>
+        <h1 id="antenna-height-label">Leg A</h1>
+        <input type="text" name="leg-a-height" placeholder="Antenna Height" id="leg-a-height" class="form-control">
+        <input type="submit" id="leg-a-submit" class="btn btn-primary">
+        <ul id="list-leg-a">
+        </ul>
+        <br>
+
+        <h1 id="antenna-height-leg-a">Leg B</h1>
+        <input type="text" name="leg-b-height" placeholder="Antenna Height" id="leg-b-height" class="form-control">
+        <input type="submit" id="leg-b-submit" class="btn btn-primary">
+        <ul id="list-leg-b">
+        </ul>
+        <br>
+
+        <h1 id="antenna-height-label">Leg C</h1>
+        <input type="text" name="leg-c-height" placeholder="Antenna Height" id="leg-c-height" class="form-control">
+        <input type="submit" id="leg-c-submit" class="btn btn-primary">
+        <ul id="list-leg-c">
+        </ul>
+        <br>
+
+      </div>
+
+      <div class="output">
+          <button type="button" id="init" class="btn btn-primary">Get Available Antenna Locations!!</button>
+
+          <h3>Leg A</h3>
+          <ul class="available-locations-leg-a">
+          </ul>
+          <h3>Leg B</h3>
+          <ul class="available-locations-leg-b">
+          </ul>
+          <h3>Leg C</h3>
+          <ul class="available-locations-leg-c">
+          </ul>
+      </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>

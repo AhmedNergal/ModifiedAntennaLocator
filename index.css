@@ -1,0 +1,67 @@
+.container {
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#tower-height {
+  margin-bottom: 30px;
+}
+
+#antenna-height {
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+body {
+  background: #2b5876;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.form-control {
+  width: 65%;
+  margin: auto;
+}
+
+.input {
+  margin: auto;
+  margin-bottom: 100px;
+  background: white;
+  padding: 50px;
+  width: 60%;
+  border-radius: 80px;
+}
+
+#antenna-height-label {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: #4e4376;
+}
+
+.btn-primary:hover {
+  background-color: #2b5876;
+}
+
+.output {
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: white;
+  padding: 50px;
+  width: 60%;
+  border-radius: 80px;
+  text-align: center;
+}
