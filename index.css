@@ -40,7 +40,7 @@ body {
   margin-bottom: 100px;
   background: white;
   padding: 50px;
-  width: 60%;
+  width: 80%;
   border-radius: 80px;
 }
 
@@ -62,7 +62,38 @@ body {
   margin-bottom: 50px;
   background: white;
   padding: 50px;
-  width: 60%;
+  width: 80%;
   border-radius: 80px;
   text-align: center;
+}
+
+.input-list {
+  margin: auto;
+  border: 2px solid black;
+  width: 15rem;
+  height: 10rem;
+  overflow-y: scroll;
+  border-radius: 2px;
+}
+
+.input-text {
+  margin-bottom: 0.75rem;
+}
+
+.input-submit {
+  margin-bottom: 0.75rem;
+}
+
+.output-list {
+  margin: auto;
+  border: 2px solid black;
+  width: 15rem;
+  height: 10rem;
+  overflow-y: scroll;
+  border-radius: 2px;
+}
+
+.three-legged-leg-c {
+  
+  margin: auto;
 }
