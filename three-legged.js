@@ -121,7 +121,7 @@ function availableLocationsInLeg(leg){
 function unavailableLocationsInTower(legA, legB, legC){
   currentHeight = towerHeight - 2.6;
 
-  while (currentHeight > 30){
+  while (currentHeight > 0){
     let numberOfOccurences = 0;
 
     legA.forEach(function(antenna){

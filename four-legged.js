@@ -30,22 +30,6 @@ var availableLocationsLegD = document.querySelector("#available-locations-leg-d"
 
 towerHeight = 0;
 
-// Test Material
-
-/*
-  towerHeight = 120;
-  existingAntennasLegB = [];
-  existingAntennasLegC = [];
-  existingAntennasLegD = [];
-  
-  existingAntennasLegA = [46, 45, 40, 39, 18];
-  existingAntennasLegB = [46, 40, 45, 19, 25];
-  existingAntennasLegC = [46, 20, 30, 40, 50];
-  existingAntennasLegD = [];
-
-*/
-
-
 
 // Tower Height
 
@@ -163,7 +147,7 @@ function availableLocationsInLeg(leg){
 function unavailableLocationsInTower(legA, legB, legC, legD){
   currentHeight = towerHeight - 2.6;
 
-  while (currentHeight > 30){
+  while (currentHeight > 0){
     let numberOfOccurences = 0;
 
     legA.forEach(function(antenna){
