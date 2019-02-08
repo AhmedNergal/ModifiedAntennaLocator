@@ -27,6 +27,7 @@ var availableLocationsLegA = document.querySelector("#available-locations-leg-a"
 var availableLocationsLegB = document.querySelector("#available-locations-leg-b");
 var availableLocationsLegC = document.querySelector("#available-locations-leg-c");
 var availableLocationsLegD = document.querySelector("#available-locations-leg-d");
+var reset = document.querySelector("#reset");
 
 towerHeight = 0;
 
@@ -115,6 +116,35 @@ initButton.addEventListener("click", function(){
     availableLocationsLegD.appendChild(listElement);
   });
 
+});
+
+reset.addEventListener("click", function(){
+  while (availableLocationsLegA.firstChild){
+    availableLocationsLegA.removeChild(availableLocationsLegA.firstChild);
+  }
+  while (availableLocationsLegB.firstChild){
+    availableLocationsLegB.removeChild(availableLocationsLegB.firstChild);
+  }
+  while (availableLocationsLegC.firstChild){
+    availableLocationsLegC.removeChild(availableLocationsLegC.firstChild);
+  }
+  while (availableLocationsLegD.firstChild){
+    availableLocationsLegD.removeChild(availableLocationsLegD.firstChild);
+  }
+
+  blockedHeights = [];
+  availableAntennaLocationsLegA = [];
+  availableAntennaLocationsLegB = [];
+  availableAntennaLocationsLegC = [];
+  availableAntennaLocationsLegD = [];
+  availableLocationsForStandaloneLegA = [];
+  availableLocationsForStandaloneLegB = [];
+  availableLocationsForStandaloneLegC = [];
+  availableLocationsForStandaloneLegD = [];
+  finalAntennaLocationsLegA = [];
+  finalAntennaLocationsLegB = [];
+  finalAntennaLocationsLegC = [];
+  finalAntennaLocationsLegD = [];
 });
 
 

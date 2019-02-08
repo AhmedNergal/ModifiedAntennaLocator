@@ -91,6 +91,29 @@ initButton.addEventListener("click", function(){
 
 });
 
+reset.addEventListener("click", function(){
+  while (availableLocationsLegA.firstChild){
+    availableLocationsLegA.removeChild(availableLocationsLegA.firstChild);
+  }
+  while (availableLocationsLegB.firstChild){
+    availableLocationsLegB.removeChild(availableLocationsLegB.firstChild);
+  }
+  while (availableLocationsLegC.firstChild){
+    availableLocationsLegC.removeChild(availableLocationsLegC.firstChild);
+  }
+
+  blockedHeights = [];
+  availableAntennaLocationsLegA = [];
+  availableAntennaLocationsLegB = [];
+  availableAntennaLocationsLegC = [];
+  availableLocationsForStandaloneLegA = [];
+  availableLocationsForStandaloneLegB = [];
+  availableLocationsForStandaloneLegC = [];
+  finalAntennaLocationsLegA = [];
+  finalAntennaLocationsLegB = [];
+  finalAntennaLocationsLegC = [];
+});
+
 
 // Available Antenna Locations in One Leg
 
